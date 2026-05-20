@@ -1,2 +1,2 @@
 # shell_script_profissional
-Repositório para guardar, errar, aprender enquanto leio o livro "Shell Script Profissional - Aurelio Marinho Jargas"
+Repositório para guardar, errar e aprender enquanto leio e aplico o livro "Shell Script Profissional - Aurelio Marinho Jargas"
