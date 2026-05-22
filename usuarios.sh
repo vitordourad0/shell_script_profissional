@@ -6,26 +6,31 @@
 
 #Versão 1: Mostra usuários e nomes separados por TAB
 #Versão 2: Adicionado suporte a ação -h
-
+#Versão 3: Adicionado suporte á opção -V e opções inválidas
 MENSAGEM_USO="
-Uso: $0 [-h]
+Uso: $0 [-h | -V]
 
         -h      Mostra esta tela de ajuda e sai
+        -V      Mostra a versão do programa e sai
 "
-VERSA0="
-Uso: $0 [-v]
-        -v      versao 1.0
-"
+
 #Tratamento das opções de linha de comando
-if test "$1" = "-h"
-then
-   echo "$MENSAGEM_USO"
-elif
-   test "$1" = "-v"
-then
-   echo "$VERSAO"
-   exit 0
-fi
+case "$1" in 
+   -h)
+        echo "$MENSAGEM_USO"
+        exit 0
+;;
+
+-V)
+        echo $0 Versão 3
+        exit 0
+;;
+
+*)
+        echo Opção inválida: $1
+        exit 1
+;;
+esac
 
 #Processamento
 cut -d : -f 1,5 /etc/passwd | tr : \\t
